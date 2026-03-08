@@ -1,0 +1,63 @@
+
+<!-- created by create-app-cli -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="." />
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Clash of Clans Service</title>
+		<!-- css library -->
+		<link rel="stylesheet" href="static/css/index.css">
+	</head>
+	<body>
+		<main>
+			<h1>Clash of clans service</h1>
+			<p>
+				Este servicio permite consultar a los jugadores de todo el mundo,
+				conoce los niveles de estadisticas y mucho más.			
+			</p>
+			<div class="grid-2">
+				<div class="card">
+					<h3>Conoce al jugador:</h3>
+					<p>Ingresa la etiqueta del jugador para realizar la búsqueda</p>
+					<form id="form-search-player" novalidate>
+						<div class="grid-2">
+							<label for="player-tag">Etiqueta del jugador:</label>
+							<div class="input-inline">
+								<input placeholder="#QGCPLUGV9" type="text" name="player-tag" id="player-tag" />
+								<input type="submit" value="Consultar" />
+							</div>
+						</div>
+
+						<div class="error-input">
+							<small id="error-player-tag"></small>
+						</div>
+					</form>
+				</div>
+				<div class="card">
+					<h3>Conoce al clan:</h3>
+					<p>Ingresa la etiqueta del clan para realizar la búsqueda</p>
+					<form id="form-search-clan" novalidate>
+						<div class="grid-2">
+							<label for="clan-tag">Etiqueta del clan:</label>
+							<div class="input-inline">
+								<input placeholder="#2C29GOVLC" type="text" name="clan-tag" id="clan-tag" />
+								<input type="submit" value="Consultar" />
+							</div>
+						</div>
+						<div class="error-input">
+							<small id="error-clan-tag"></small>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- contenido de los resultados -->
+			<div id="content"></div>
+		</main>
+		<!-- js script -->
+		<script src="static/js/index.js"></script>
+	</body>
+</html>
+	

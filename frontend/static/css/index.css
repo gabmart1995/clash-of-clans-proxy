@@ -1,0 +1,68 @@
+
+/** create-app-cli */
+:root {
+    --background-primary-button: rgb(0, 124, 233);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    margin-inline: 20px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+}
+
+.card {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-block: 20px;
+    padding-inline: 30px;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card label {
+    font-weight: bold;
+}
+.card form {
+    margin-top: 30px;
+}
+	
+.error-input {
+    color: red;
+}
+
+.input-inline {
+    display: flex;
+    justify-content: end;
+    border-radius: 5px;
+}
+
+.input-inline input {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.input-inline input[type="text"] {
+    border: 1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.input-inline input[type="submit"] {
+    color: white;
+    background: var(--background-primary-button);
+    font-size: 0.8rem;
+    width: auto;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
