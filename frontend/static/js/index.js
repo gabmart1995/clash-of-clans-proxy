@@ -125,8 +125,9 @@ function init() {
                 status: response.status
             }
 
-            const clashData = await response.json();
-            console.log(clashData);
+            /** @type {Player} */
+            const player = await response.json();
+            console.log(player.clan);
 
         } catch (error) {
             console.error(error);
