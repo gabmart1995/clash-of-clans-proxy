@@ -1,6 +1,4 @@
 /**
- * player types
- * 
  * @typedef LegendLeagueTournamentSeasonResult
  * @type {Object}
  * @property {number} trophies
@@ -16,7 +14,7 @@
  * @property {LegendLeagueTournamentSeasonResult} previousBuilderBaseSeason
  * @property {LegendLeagueTournamentSeasonResult} bestBuilderBaseSeason
  * 
- * @typedef Player
+ * @typedef Player petición HTTP del jugador
  * @type {Object}
  * @property {number} attackWins
  * @property {number} defenseWins
@@ -53,7 +51,7 @@
  * @property {string} tag
  * @property {number} clanLevel
  * @property {string} name
- * @property {Object} badgeUrls
+ * @property {Object} badgeUrls icono de escudo del clan
  * @property {string} [badgeUrls.small]
  * @property {string} [badgeUrls.large]
  * @property {string} [badgeUrls.medium] 
@@ -70,7 +68,7 @@
  * @type {Object}
  * @property {string} name
  * @property {number} id
- * @property {Object} iconUrls
+ * @property {Object} iconUrls iconos de la liga
  * @property {string} [iconUrls.small]
  * @property {string} [iconUrls.large] 
  * @property {string} [iconUrls.meduim] 
@@ -84,4 +82,47 @@
  * @property {string} info
  * @property {string} completionInfo
  * @property {'home' | 'builderBase' | 'clanCapital'} village 
+ * 
+ * @typedef Clan peticion HTTP de información del clan
+ * @type {Object}
+ * @property {string} tag
+ * @property {string} name
+ * @property {number} clanLevel
+ * @property {number} warWinStreak racha de guerras ganadas
+ * @property {number} warWins cantidad de guerras ganadas
+ * @property {number} warTies cantidad de guerras en empates
+ * @property {number} warLosses cantidad de guerras perdidas
+ * @property {number} clanPoints
+ * @property {number} clanBuilderBasePoints
+ * @property {number} clanCapitalPoints
+ * @property {number} requiredTrophies
+ * @property {number} requiredBuilderBaseTrophies
+ * @property {number} members
+ * @property {string} description
+ * @property {Object} badgeUrls icono de escudo del clan
+ * @property {string} [badgeUrls.small]
+ * @property {string} [badgeUrls.large]
+ * @property {string} [badgeUrls.medium]
+ * @property {ClanCapital} clanCapital capital del clan
+ * @property {LocationData} location
+ * @property {'open' | 'invite_only' | 'closed'}
+ * 
+ * @typedef ClanCapital
+ * @type {Object}
+ * @property {number} capitalHallLevel
+ * @property {Array<ClanDistrictData>} districts
+ * 
+ * @typedef ClanDistrictData
+ * @type {Object}
+ * @property {number} id
+ * @property {string} name
+ * @property {number} districtHallLevel
+ * 
+ * @typedef LocationData datos de localizacion del jugador o clan
+ * @type {Object}
+ * @property {string} localizedName
+ * @property {number} id
+ * @property {string} name
+ * @property {string} countryCode
+ * @property {boolean} isCountry
  */

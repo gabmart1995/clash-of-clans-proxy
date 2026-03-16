@@ -32,8 +32,6 @@ function init() {
                 }
             );
 
-            console.log(response);
-
             if (!response.ok) throw { 
                 ok: false, 
                 error: 'Revisa la conexion a internet',
@@ -59,8 +57,9 @@ function init() {
                 status: response.status
             }
 
-            const clashData = await response.json();
-            console.log(clashData);
+            /** @type {Clan} */
+            const clan = await response.json();
+            console.log(clan.location);
 
         } catch (error) {
             console.error(error);
