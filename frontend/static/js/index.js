@@ -59,7 +59,33 @@ function init() {
 
             /** @type {Clan} */
             const clan = await response.json();
-            console.log(clan.location);
+
+            UI.clanContainer.innerHTML = (`
+                <div class="card">
+                    <div class="grid-2 grid-25-75">
+                        <img src="${clan.badgeUrls.medium ?? ''}" alt="image_clan" width="125" height="125" />
+                        <div>
+                            <h2>${clan.name}</h2>
+                            <small><b>${clan.tag}</b></small>
+                            <p class="clan-description">"${clan.description}"</p>
+                            <div class="labels">
+                                ${clan.labels.map(label => (`
+                                    <span>
+                                        <img width="25" height="25" src="${label.iconUrls.small}" alt="label_small" />
+                                        ${label.name}
+                                    </span>    
+                                `)).join('')}
+                            </div>
+                            <p>
+                                Nivel del clan: <b>${clan.clanLevel}</b><br />
+                                País: <b>${clan.location.name}</b><br />
+                            </p>
+                            <p>Cantidad de integrantes: <b>${clan.members}</b></p>
+                        </div>
+                    </div>
+                </div>    
+            `);
+            
 
         } catch (error) {
             console.error(error);
@@ -126,7 +152,46 @@ function init() {
 
             /** @type {Player} */
             const player = await response.json();
-            console.log(player.clan);
+
+            UI.playerContainer.innerHTML = (`
+                <div class="card">
+                    <div class="grid-2 grid-25-75">
+                        <img src="${player.leagueTier.iconUrls.small ?? ''}" alt="image_league" />
+                        <div>
+                            <h2>${player.name}</h2>
+                            <small><b>${player.tag}</b></small>
+                            <div class="labels">
+                                ${player.labels.map(label => (`
+                                    <span>
+                                        <img width="25" height="25" src="${label.iconUrls.small}" alt="label_small" />
+                                        ${label.name}
+                                    </span>    
+                                `)).join('')}
+                            </div>
+                            <p>
+                                Nivel de experiencia: <b>${player.expLevel}</b><br />
+                                Nivel de ayuntamiento: <b>${player.townHallLevel}</b><br />
+                            </p>
+                            <p>
+                                Nivel de liga: <b>${player.leagueTier.name}</b><br />
+                            </p>
+                            <p>
+                                Clan del jugador: 
+                                    <b>
+                                        ${player.clan ? 
+                                            player.clan.name 
+                                            : 
+                                            (`El jugador no se encuentra en ningún clan`)
+                                        }
+                                    </b><br />
+                                ${player.clan ? (`
+                                    Código del clan: <b>${player.clan.tag}</b>    
+                                `) : ''}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `);
 
         } catch (error) {
             console.error(error);
@@ -152,7 +217,9 @@ function init() {
         formSearchPlayer: document.querySelector('#form-search-player'),
         formSearchClan: document.querySelector('#form-search-clan'),
         errorSearchPlayer: document.querySelector('#error-player-tag'),
-        errorSearchClan: document.querySelector('#error-clan-tag')
+        errorSearchClan: document.querySelector('#error-clan-tag'),
+        playerContainer: document.querySelector('#player'),
+        clanContainer: document.querySelector('#clan'),
     };
 
     const REGEX = {

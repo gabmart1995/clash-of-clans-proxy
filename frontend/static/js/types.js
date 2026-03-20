@@ -43,6 +43,7 @@
  * @property {LeagueTier} leagueTier
  * @property {Array<PlayerAchievementProgress>} achievements
  * @property {PlayerClan} clan
+ * @property {Array<Label>} labels
  * @property {PlayerLeyendStadistics} [legendStadistics]
  * @property {LeagueTier} [league]
  *
@@ -125,4 +126,14 @@
  * @property {string} name
  * @property {string} countryCode
  * @property {boolean} isCountry
+ * 
+ * 
+ * @typedef Label etiquetas del jugador o clan
+ * @type {Object}
+ * @property {string} name
+ * @property {number} id
+ * @property {Object} iconUrls del label
+ * @property {string} [iconUrls.small]
+ * @property {string} [iconUrls.large] 
+ * @property {string} [iconUrls.meduim] 
  */

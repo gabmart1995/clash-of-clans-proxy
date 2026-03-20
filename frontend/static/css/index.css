@@ -5,9 +5,11 @@
 }
 
 body {
+    margin: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    padding: 0;
-    margin-inline: 20px;
 }
 
 .grid-2 {
@@ -15,6 +17,14 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     column-gap: 20px;
+}
+
+#player, #clan {
+    margin-top: 20px;
+}
+
+.grid-25-75 {
+    grid-template-columns: 25% 75%;
 }
 
 .card {
@@ -65,4 +75,21 @@ body {
     width: auto;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.labels {
+    display: flex;
+    column-gap: 10px;
+    margin-block: 15px;
+}
+
+.labels span {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+}
+
+.clan-description {
+    margin-block: 15px;
+    font-style: italic;
 }

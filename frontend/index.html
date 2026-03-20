@@ -19,38 +19,44 @@
 				conoce los niveles de estadisticas y mucho más.			
 			</p>
 			<div class="grid-2">
-				<div class="card">
-					<h3>Conoce al jugador:</h3>
-					<p>Ingresa la etiqueta del jugador para realizar la búsqueda</p>
-					<form id="form-search-player" novalidate>
-						<div class="grid-2">
-							<label for="player-tag">Etiqueta del jugador:</label>
-							<div class="input-inline">
-								<input placeholder="#QGCPLUGV9" type="text" name="player-tag" id="player-tag" />
-								<input type="submit" value="Consultar" />
+				<div>
+					<div class="card">
+						<h3>Conoce al jugador:</h3>
+						<p>Ingresa la etiqueta del jugador para realizar la búsqueda</p>
+						<form id="form-search-player" novalidate>
+							<div class="grid-2">
+								<label for="player-tag">Etiqueta del jugador:</label>
+								<div class="input-inline">
+									<input placeholder="#QGCPLUGV9" type="text" name="player-tag" id="player-tag" />
+									<input type="submit" value="Consultar" />
+								</div>
 							</div>
-						</div>
-
-						<div class="error-input">
-							<small id="error-player-tag"></small>
-						</div>
-					</form>
+	
+							<div class="error-input">
+								<small id="error-player-tag"></small>
+							</div>
+						</form>
+					</div>
+					<div id="player"></div>
 				</div>
-				<div class="card">
-					<h3>Conoce al clan:</h3>
-					<p>Ingresa la etiqueta del clan para realizar la búsqueda</p>
-					<form id="form-search-clan" novalidate>
-						<div class="grid-2">
-							<label for="clan-tag">Etiqueta del clan:</label>
-							<div class="input-inline">
-								<input placeholder="#2C29GOVLC" type="text" name="clan-tag" id="clan-tag" />
-								<input type="submit" value="Consultar" />
+				<div>
+					<div class="card">
+						<h3>Conoce al clan:</h3>
+						<p>Ingresa la etiqueta del clan para realizar la búsqueda</p>
+						<form id="form-search-clan" novalidate>
+							<div class="grid-2">
+								<label for="clan-tag">Etiqueta del clan:</label>
+								<div class="input-inline">
+									<input placeholder="#2C29GOVLC" type="text" name="clan-tag" id="clan-tag" />
+									<input type="submit" value="Consultar" />
+								</div>
 							</div>
-						</div>
-						<div class="error-input">
-							<small id="error-clan-tag"></small>
-						</div>
-					</form>
+							<div class="error-input">
+								<small id="error-clan-tag"></small>
+							</div>
+						</form>
+					</div>
+					<div id="clan"></div>
 				</div>
 			</div>
 			<!-- contenido de los resultados -->
