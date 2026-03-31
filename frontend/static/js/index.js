@@ -202,6 +202,54 @@ function init() {
     };
 
     /**
+     * Obtiene las localizaciones geograficas de los clanes
+     * y actualiza la interfaz
+     */
+    async function getLocations() {
+        try {
+            const response = await fetch(`${API.url}locations`);
+
+            if (!response.ok) throw {
+                ok: false,
+                error: 'Revisa tu conexión a Internet',
+                status: 0
+            }
+
+            if (response.status === 404) throw {
+                ok: false,
+                error: 'Infomación no fue encontrada',
+                status: 404
+            }
+
+            if (response.status === 400) throw {
+                ok: false,
+                error: 'Error por parte del usuario al enviar los datos',
+                status: 400
+            }
+
+            if (response.status >= 500) throw {
+                ok: false,
+                error: 'Servidor en mantenimiento, espere a más tarde',
+                status: response.status
+            }
+
+            /** @type {{ items: Array<LocationGame>}} */
+            let {items: locations} = await response.json();
+            locations = locations.filter(location => location.name.length > 0);
+
+            UI.formLocation.innerHTML = (`
+                <option id="">Seleccione ...</option>
+                ${locations.map(location => (`
+                    <option id="${location.id}">${location.name}</option>    
+                `)).join('')}    
+            `);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    /**
      * Limpia los campos de errores
      */
     function resetErrors() {
@@ -220,6 +268,7 @@ function init() {
         errorSearchClan: document.querySelector('#error-clan-tag'),
         playerContainer: document.querySelector('#player'),
         clanContainer: document.querySelector('#clan'),
+        formLocation: document.querySelector('form #clan_location')
     };
 
     const REGEX = {
@@ -228,6 +277,9 @@ function init() {
 
     UI.formSearchClan.addEventListener('submit', handleSubmitClan);
     UI.formSearchPlayer.addEventListener('submit', handleSubmitPlayer);
+
+    // cargamos las localizaciones en el formulario
+    getLocations();
 }	
 
 

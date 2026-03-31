@@ -136,4 +136,13 @@
  * @property {string} [iconUrls.small]
  * @property {string} [iconUrls.large] 
  * @property {string} [iconUrls.meduim] 
+ * 
+ * 
+ * @typedef LocationGame 
+ * @type {Object}
+ * @property {number} id
+ * @property {string} name
+ * @property {string} localizedName
+ * @property {boolean} isCountry
+ * @property {string} [countryCode]
  */

@@ -60,7 +60,44 @@
 				</div>
 			</div>
 			<!-- contenido de los resultados -->
-			<div id="content"></div>
+			<h3>Buscar clan u clanes por parametros especializados</h3>
+			<form>
+				<p>
+					<label for="clan_name">nombre del clan:</label>
+					<input pattern="^[\dA-Za-z]{1,30}$" id="clan_name" type="text" name="clan_name" />
+				</p>
+				<p>
+					<label for="clan_location">localización del clan:</label>
+					<select name="clan_location" id="clan_location">
+						<option value="">Seleccione ...</option>
+					</select>
+				</p>
+				<p>
+					<label for="min_clan_level">Nivel Mínimo del Clan:</label>
+					<input 
+						value="1" 
+						type="number" 
+						min="1" 
+						max="99" 
+						name="min_clan_level" 
+						id="min_clan_level" 
+					/>
+				</p>
+				<p>
+					<button type="reset">Limpiar</button>
+					<button type="submit">Buscar</button>
+				</p>
+			</form>
+			<table>
+				<thead>
+					<tr>
+						<td>Tag</td>
+						<td>Nombre</td>
+						<td>Descripción</td>
+					</tr>
+				</thead>
+				<tbody id="content"></tbody>
+			</table>
 		</main>
 		<!-- js script -->
 		<script src="static/js/types.js"></script>
