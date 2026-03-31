@@ -235,6 +235,7 @@ function init() {
 
             /** @type {{ items: Array<LocationGame>}} */
             let {items: locations} = await response.json();
+            
             locations = locations.filter(location => location.name.length > 0);
 
             UI.formLocation.innerHTML = (`
@@ -278,7 +279,6 @@ function init() {
     UI.formSearchClan.addEventListener('submit', handleSubmitClan);
     UI.formSearchPlayer.addEventListener('submit', handleSubmitPlayer);
 
-    // cargamos las localizaciones en el formulario
     getLocations();
 }	
 
